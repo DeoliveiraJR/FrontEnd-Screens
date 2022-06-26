@@ -60,6 +60,7 @@ class Home extends React.Component {
 }
 
 /*
+
 TemplateComponent.propTypes = {
   props1: propTypes.string.isRequired,
   props1: propTypes.bool.isRequired,
