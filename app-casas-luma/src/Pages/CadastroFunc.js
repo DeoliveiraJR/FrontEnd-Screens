@@ -2,11 +2,9 @@
 // -----------------------------------------------------------------------------------------------------------------------
 import React from 'react';
 import PropTypes from 'prop-types';
-import BtnLogin from '../Componentes/BtnLogin';
 import Loading from '../Componentes/Loading';
-import { Link } from 'react-router-dom';
-// import './Login.css';
-// import walletLogo from '../imagens/walletLogo.png';
+import './CadastroFunc.css';
+import Logo from '../Imagens/Logo.svg';
 
 class CadastroFunc extends React.Component {
   // =============================================================
@@ -22,12 +20,19 @@ class CadastroFunc extends React.Component {
     this.handleOnChange = this.handleOnChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.handleValidateBtnDisable = this.handleValidateBtnDisable.bind(this);
+    this.handleOnChangeLogin = this.handleOnChangeLogin.bind(this);
 
     // 3- create initial-state-component {Object} :
     this.state = {
+      login: '',
+      passwordLogin: '',
+      codigo: '',
+      name: '',
       email: '',
+      cargo: '',
       password: '',
       statusBtn: true,
+      statusBtnLogin: true,
       loading: false,
     };
   }
@@ -59,6 +64,33 @@ class CadastroFunc extends React.Component {
     });
   }
 
+  // =====------FUNCTION------=====
+  // describe function: this function receive an event onChange on input and setState:
+  handleOnChangeLogin(event) {
+    console.log('handleOnchange');
+    console.log('---------------');
+
+    const { target } = event;
+    const { value } = target;
+
+    this.setState({
+      [target.name]: value,
+    }, () => {
+      
+      const { login, passwordLogin } = this.state;
+      const MIN_LENGHT= 1;
+
+    if (
+      login.length >= MIN_LENGHT
+      && passwordLogin.length >= MIN_LENGHT
+    ) {
+      this.setState({ statusBtnLogin: false });
+    } else {
+      this.setState({ statusBtnLogin: true });
+    }
+    });
+  }
+
   // ====----FUNCTION 2----====
   // describe function: this function receive an event onClick on btn-Login and setState:
   handleClick() {
@@ -76,11 +108,14 @@ class CadastroFunc extends React.Component {
     console.log('handleBtnDisable');
     console.log('------------');
 
-    const { email, password } = this.state;
-    const MIN_LENGHT= 6;
+    const { codigo, name, email, cargo, password } = this.state;
+    const MIN_LENGHT= 1;
 
     if (
-        email.length >= MIN_LENGHT
+      codigo.length >= MIN_LENGHT
+      && cargo.length >= MIN_LENGHT
+      && name.length >= MIN_LENGHT
+      && email.length >= MIN_LENGHT
       && password.length >= MIN_LENGHT
     ) {
       this.setState({ statusBtn: false });
@@ -97,56 +132,142 @@ class CadastroFunc extends React.Component {
     console.log('-------------');
 
     // ====Desctructing Objects=====
-    const { email, statusBtn, loading } = this.state;
+    const { cargo ,statusBtn, statusBtnLogin, loading } = this.state;
 
     return (
-      <div className="main-div">
+      <div className="main-divRegister">
         { loading ? (
           <Loading />
         ) : (
-          <div className="main-containerLogin">
-            <form className="main-formLogin">
-              {/* <img src={ walletLogo } alt="wallet icon" className="main-image" /> */}
-              <h2 className="main-title">Cadastrar Funcionario</h2>
-
-              {/* componente 1 - input username */}
-              <label htmlFor="email" className="main-label">
-                <input
-                  className="main-input"
-                  type="text"
-                  name="email"
-                  placeholder="digite o seu usuario"
-                  onChange={ this.handleOnChange }
-                />
-              </label>
-
-              {/* componente 2 - input password */}
-              <label htmlFor="password" className="main-label">
-                <input
-                  className="main-input"
-                  type="password"
-                  name="password"
-                  placeholder="digite sua senha"
-                  onChange={ this.handleOnChange }
-                />
-              </label>
-
-              {/* componente 2 - btn Login */}
-              <BtnLogin
-                statusBtn={ statusBtn }
-                onClickButton={ () => this.handleClick(email) }
-              />
-
-              {/* CREATE-PROFILE */}
-              <span className="main-span">
-                <p className="title-txt">ainda não é cadastrado?</p>
-                <Link
-                  to="/createProfile"
+          /* COMPONENTE HEADER - REGISTER */
+          <div className="main-containerHeader">
+            <header className="main-headerRegister">
+              {/* CONTAINER LOGO */}
+              <div className="container-logo-header">
+                <img src={ Logo } alt="logo icon" className="main-image-header" />
+              </div>
+              
+              {/* CONTAINER INPUTS */}
+              <div className="container-login-header">
+                <label htmlFor="login" className="main-label">
+                  <input
+                    className="main-input-header"
+                    type="text"
+                    name="login"
+                    placeholder="email"
+                    onChange={ this.handleOnChangeLogin }
+                  />
+                </label>
+                <label htmlFor="passwordLogin" className="main-label">
+                  <input
+                    className="main-input-header"
+                    type="password"
+                    name="passwordLogin"
+                    placeholder="senha"
+                    onChange={ this.handleOnChangeLogin }
+                    />
+                </label>
+                <button
+                  className="main-buttonLogin-header"
+                  type="button"
+                  disabled={ statusBtnLogin }
+                  onClick={ this.handleClick }
                 >
-                  <p className="link">cadastrar-se</p>
-                </Link>
-              </span>
-            </form>
+                  Entrar
+                </button>
+              </div>
+            </header>
+            
+            {/* CONTAINER BOTTOM */}
+            <div class="container-bottom">
+            
+              {/* CONTAINER LEFT - FORMS */}
+              <div className="main-container-form">
+                <form className="main-formRegister">
+                  <h2 className="main-titleRegister">Cadastrar Funcionario</h2>
+
+                  
+                  {/* INPUT-BLOCK CODIGO / NAME */}
+                  <div className="main-input-blockName">
+                    <label htmlFor="codigo" className="main-label">
+                      <input
+                        className="input-code"
+                        type="text"
+                        name="codigo"
+                        placeholder="codigo-func"
+                        onChange={ this.handleOnChange }
+                        />
+                    </label>
+
+                    {/* componente 1 - input username */}
+                    <label htmlFor="name" className="main-label">
+                      <input
+                        className="input-name"
+                        type="text"
+                        name="name"
+                        placeholder="digite o seu nome completo"
+                        onChange={ this.handleOnChange }
+                      />
+                    </label>
+                  </div>
+
+                  {/* componente 1 - input username */}
+                  <label htmlFor="cargo">
+                    <select
+                      name="cargo"
+                      placeholder="selecione um cargo"
+                      className="main-input-select"  
+                      value={ cargo }
+                      onChange={ this.handleOnChange }
+                      >
+                        Selecione um cargo:
+                      <option value="Cargo 1">Cargo 1</option>
+                      <option value="Cargo 2">Cargo 2</option>
+                      <option value="Cargo 3">Cargo 3</option>
+                    </select>
+                  </label>
+                    
+                  {/* componente 1 - input username */}
+                  <label htmlFor="email" className="main-label">
+                  </label>
+                    <input
+                      className="main-input-register"
+                      type="text"
+                      name="email"
+                      placeholder="digite um email válido"
+                      onChange={ this.handleOnChange }
+                    />
+
+                  {/* componente 2 - input password */}
+                  <label htmlFor="password" className="main-label">
+                  </label>
+                    <input
+                      className="main-input-register"
+                      type="password"
+                      name="password"
+                      placeholder="cadastre sua senha"
+                      onChange={ this.handleOnChange }
+                    />
+
+                  {/* componente 2 - btn Login */}
+                  <button
+                    className="main-buttonRegister"
+                    type="button"
+                    disabled={ statusBtn }
+                    onClick={ this.handleClick }
+                  >
+                    Cadastrar
+                  </button>
+
+                </form>
+              </div>
+
+              {/* CONTAINER LEFT - ANIMATION */}
+              <div className="container-animation">
+                animation
+              </div>
+
+            </div>
           </div>
         )}
       </div>

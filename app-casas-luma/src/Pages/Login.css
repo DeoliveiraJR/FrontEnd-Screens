@@ -1,43 +1,51 @@
 .main-div {
-    background-color: #38ada9;
+    background-color: #d63031;
     height: 750px;
   }
   
   .main-containerLogin {
     align-items: center;
-    background-color: #38ada9;
+    background-color: #192a56;
     display: flex;
     flex-direction: column;
     height: 100%;
     justify-content: center;
   }
-  
-  .main-title {
-    color: #e17055;
-    display: flex;
-    font-size: 48px;
-    font-weight: 700;
-    margin-bottom: 10px;
-  }
-  
-  .main-image {
-    margin-top: 10px;
-  }
-  
+
   .main-formLogin {
     align-items: center;
     background-color: white;
-    border-radius: 20%;
+    border-radius: 3%;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     height: 600px;
-    justify-content: center;
-    width: 350px;
+    width: 420px;
   }
   
+  .main-containerImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .main-image {
+    border-radius: 100%;
+    width: 190px;
+    height: 200px;
+  }
+  
+  .main-title {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    color: #4cd137;
+    font-size: 48px;
+    font-weight: 700;
+  }
+
   .main-input {
     background-color: white;
-    border-bottom-color: #e17055;
+    border-bottom-color: #192a56;
     border-bottom-width: 1px;
     border-left: 0;
     border-radius: 5px;
@@ -48,14 +56,13 @@
     height: 50px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10px;
     padding: 10px;
     width: 300px;
   }
   
   .main-button {
     align-items: center;
-    background-color: #079992;
+    background-color: #44bd32;
     border-radius: 40px;
     color: white;
     cursor: pointer;
@@ -63,34 +70,35 @@
     height: 50px;
     justify-content: center;
     margin-bottom: 12px;
-    margin-top: 30px;
+    margin-top: 15px;
     width: 300px;
   }
   
   .main-button:disabled {
     align-items: center;
-    background-color: #e17055;
+    background-color: #7bed9f;
     border-radius: 40px;
-    color: white;
+    color: #192a56;
     font-size: 18 px;
     height: 50px;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 15px;
     width: 300px;
   }
   
   .main-span {
     display: flex;
+    align-items: center;
   }
   
   .main-span .title-txt {
-    color: #e17055;
-    font-size: 14px;
+    color: #4d5156;
+    font-size: 12px;
     padding-right: 5px;
   }
   
   .main-span .link {
-    color: #00cec9;
+    color: #44bd32;
     font-size: 14px;
     font-weight: 700;
     text-decoration: none;
