@@ -1,12 +1,14 @@
 // Modelo default de Template para criação de componentes:
 import React from 'react';
 // import propTypes from 'prop-types';
+import './Home.css';
+import { Player } from '@lottiefiles/react-lottie-player';
 
 class Home extends React.Component {
   // =============================================================
   // ==========---------BLOCO DO CONSTRUCTOR------------==========
   // =============================================================
-
+  
   // 1- Constructor e Super;
   constructor() {
     console.log('[COMPONENT] - 1.Constructor');
@@ -14,7 +16,7 @@ class Home extends React.Component {
     super();
     // 2- 'binding' functions:
     // this.handleFunction = this.handleFunction.bind(this);
-
+    
     // 3- create State {Objeto} :
     /* this.state = {
       state1: '',
@@ -52,8 +54,14 @@ class Home extends React.Component {
     // const { state1 } = this.state;
 
     return (
-      <div>
-        Home
+      <div className="test-lottie">
+        <Player
+          autoplay
+          loop
+          src="https://assets6.lottiefiles.com/packages/lf20_jvt4bdg7.json"
+          // style={{ height: '300px', width: '300px' }}
+          className="test-lottie"
+         />          
       </div>
     );
   }

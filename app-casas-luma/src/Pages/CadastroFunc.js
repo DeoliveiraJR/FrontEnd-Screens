@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import Loading from '../Componentes/Loading';
 import './CadastroFunc.css';
 import Logo from '../Imagens/Logo.svg';
+import { Player } from '@lottiefiles/react-lottie-player';
 
 class CadastroFunc extends React.Component {
   // =============================================================
@@ -262,11 +263,15 @@ class CadastroFunc extends React.Component {
                 </form>
               </div>
 
-              {/* CONTAINER LEFT - ANIMATION */}
+              {/* CONTAINER RIGHT - ANIMATION */}
               <div className="container-animation">
-                animation
+                <Player
+                  autoplay
+                  loop
+                  src="https://assets6.lottiefiles.com/packages/lf20_jvt4bdg7.json"
+                  className="test-lottie"
+                />          
               </div>
-
             </div>
           </div>
         )}
