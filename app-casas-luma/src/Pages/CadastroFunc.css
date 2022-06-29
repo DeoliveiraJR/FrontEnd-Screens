@@ -1,7 +1,11 @@
+/* =====----------CONTAINER-PAGE------------===== */
+/* ---------------------------------------------- */
 .main-divRegister {
     height: 750px;
   }
 
+/* =====----------COMPONENTE HEADER---------===== */
+/* ---------------------------------------------- */
 .main-containerHeader {
   align-items: center;
   background-color: #192a56;
@@ -64,6 +68,8 @@
   margin-right: 10px;
 }
 
+/* =====----------CONTAINER BOTTOM----------===== */
+/* ---------------------------------------------- */
 .container-bottom {
   height: 100%;
   width: 100%;
@@ -72,6 +78,8 @@
   justify-content: space-between;
 }
 
+/* =====--------COMPONENTE ANIMATION--------===== */
+/* ---------------------------------------------- */
 .container-animation {
   align-items: center;
   display: flex;
@@ -80,6 +88,13 @@
   width: 50%;
 }
 
+.lottie {
+  height: 650px;  
+}
+
+
+/* =====----------CONTAINER FORM------------===== */
+/* ---------------------------------------------- */
 .main-container-form {
   align-items: center;
   background-color: white;
@@ -89,6 +104,9 @@
   width: 50%;
 }
 
+
+/* =====---------COMPONENTE FORM------------===== */
+/* ---------------------------------------------- */
 .main-formRegister {
   align-items: center;
   background-color: rgba(255, 234, 167, 0.2);

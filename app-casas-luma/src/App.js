@@ -44,12 +44,12 @@ export default App;
     - Valor de Compra
     - Valor de Venda.
 
-  [ ] Tela de cadastro de funcionários:
-    - Código do funcionário
-    - Nome
-    - Cargo
-    - Email
-    - Senha
+  [ X ] Tela de cadastro de funcionários:
+    X Código do funcionário
+    X Nome
+    X Cargo
+    X Email
+    X Senha
     - Salário.
 
   [ ] Tela de cadastro de vendas:

@@ -1,0 +1,51 @@
+/* =====---------STYLES-SCOPE-GLOBAL--------===== */
+/* ---------------------------------------------- */
+.icon-header {
+  color: white;
+  margin-left: 20px;
+  height: 50px;
+  width: 50px;
+}
+
+/* =====----------COMPONENTE HEADER---------===== */
+/* ---------------------------------------------- */
+.main-header-home {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #192a56;
+  height: 100%;
+  width: 100%;
+}
+
+/* =====----------DIV/CONTAINER LOGO--------===== */
+/* ---------------------------------------------- */
+.container-logo-header-home {
+  
+}
+
+/* =====---------DIV/CONTAINER TITLE--------===== */
+/* ---------------------------------------------- */
+.container-title-header-home {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-logo {
+  border-radius: 50%;
+  height: 6rem;
+  margin-top: 10px;
+}
+
+.main-title-header-home {
+  color: white;
+  font-size: 2.5rem;
+}
+
+/* =====---------CONTAINER LOGOUT/NAV-------===== */
+/* ---------------------------------------------- */
+.container-nav-header-home .icon-header{
+  margin-right: 1rem;
+}

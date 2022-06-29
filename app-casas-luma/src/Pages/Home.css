@@ -1,4 +1,118 @@
-.test-lottie {
-  height: 720px;
+/* =====---------STYLES-SCOPE-GLOBAL--------===== */
+/* ---------------------------------------------- */
+
+/* =====----------COMPONENTE HOME---------===== */
+/* ---------------------------------------------- */
+.container-home {
+  width: auto;
+  height: auto;
 }
-/* background-image: url('../Imagens/Lotties/person-working.json'); */
+
+/* =====----------COMPONENTE HEADER---------===== */
+/* ---------------------------------------------- */
+.container-header-home{
+}
+
+
+/* =====-----------NAV/LIST BANNER----------===== */
+/* ---------------------------------------------- */
+.container-nav-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+  
+}
+
+/* =====-------CONTAINER-LEFT-LOTTIE--------===== */
+/* ---------------------------------------------- */
+.container-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+}
+
+.lottie-figure {
+  height: auto;
+  width: auto;
+}
+
+/* =====-------CONTAINER-RIGTH-CARDS--------===== */
+/* ---------------------------------------------- */
+
+.container-right {
+  display: flex;
+  border-radius: 3px;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+  height: auto;
+  margin-right: 2px;
+  box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.main-figure {
+  border-radius: 3%;
+  box-shadow: 2px 0px 0px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  opacity: 0.8;
+  width: 200px;
+  height: 280px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 20px;
+  background-image: url('../Imagens/Card-v2.png')
+}
+
+.container-animation-home {
+  margin-top: 5px;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-lottie {
+  height: 160px;
+  width: 160px;
+  flex-wrap: wrap;  
+}
+
+.container-caption {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.icon-card {
+  color: #6c5ce7;
+  height: 2em;
+  width: 2em;
+  margin: 10px;
+}
+
+.main-caption {
+  display: flex;
+  font-size: 1.3rem;
+  font-weight: 700;
+  flex-wrap: wrap;
+  color: #4cd137;
+}
+
+.main-descript {
+  display: flex;
+  opacity: 1;
+  flex-wrap: wrap;  
+  font-size: 0.8em;
+  margin-bottom: 5px;
+  color: #192a56;
+}

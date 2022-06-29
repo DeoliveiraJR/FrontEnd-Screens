@@ -269,7 +269,7 @@ class CadastroFunc extends React.Component {
                   autoplay
                   loop
                   src="https://assets6.lottiefiles.com/packages/lf20_jvt4bdg7.json"
-                  className="test-lottie"
+                  className="lottie"
                 />          
               </div>
             </div>
