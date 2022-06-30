@@ -6,7 +6,7 @@ import BtnLogin from '../Componentes/BtnLogin';
 import Loading from '../Componentes/Loading';
 import { Link } from 'react-router-dom';
 import './Login.css';
-// import walletLogo from '../imagens/walletLogo.png';
+import Logo from '../Imagens/Logo.svg';
 
 class Login extends React.Component {
   // =============================================================
@@ -107,13 +107,15 @@ class Login extends React.Component {
         ) : (
           <div className="main-containerLogin">
             <form className="main-formLogin">
-              {/* <img src={ walletLogo } alt="wallet icon" className="main-image" /> */}
-              <h2 className="main-title">Casas Lumas</h2>
+              <div className="main-containerImg">
+                <img src={ Logo } alt="logo icon" className="main-image" />
+              </div>
+              <h2 className="main-title">Login</h2>
 
               {/* componente 1 - input username */}
               <label htmlFor="email" className="main-label">
                 <input
-                  className="main-input"
+                  className="main-input-login"
                   type="text"
                   name="email"
                   placeholder="digite o seu usuario"
@@ -124,7 +126,7 @@ class Login extends React.Component {
               {/* componente 2 - input password */}
               <label htmlFor="password" className="main-label">
                 <input
-                  className="main-input"
+                  className="main-input-login"
                   type="password"
                   name="password"
                   placeholder="digite sua senha"

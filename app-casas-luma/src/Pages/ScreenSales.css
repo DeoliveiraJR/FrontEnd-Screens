@@ -1,0 +1,264 @@
+/* =====---------STYLES-SCOPE-GLOBAL--------===== */
+/* ---------------------------------------------- */
+
+/* =====------COMPONENTE-SCREEN-PRODUCTS----===== */
+/* ---------------------------------------------- */
+.container-screen-products {
+    width: auto;
+    height: auto;
+  }
+  
+/* =====----------CONTAINER HEADER----------===== */
+/* ---------------------------------------------- */
+.container-header-home{
+}
+
+/* =====----------CONTAINER TITLE-----------===== */
+/* ---------------------------------------------- */
+.main-title-products {
+  font-weight: normal;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: auto;
+  width: 100%;
+  margin-bottom: 45px;
+  text-align: center;
+  color: #44bd32;
+  font-size: 35px;
+}
+
+/* =====----------CONTAINER FORMS-----------===== */
+/* ---------------------------------------------- */
+.container-form {
+  margin-top: 20px;
+  height: auto;
+  width: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* =====-------------BLOCK FORMS------------===== */
+/* ---------------------------------------------- */
+.block-form {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+}
+
+.main-form {
+  align-items: center;
+  background-color: rgba(255, 234, 167, 0.8);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  height: auto;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+}
+
+.main-label {
+  color: #192a56;
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+.main-input {
+  border-bottom-color: #192a56;
+  border-bottom-width: 1px;
+  border-left: 0;
+  border-radius: 5px;
+  border-right: 0;
+  border-top: 0;
+  color: #4d5156;
+  font-size: 12px;
+  height: 8px;
+  margin-left: 5px;
+  padding: 10px;
+  width: 100px;
+}
+
+.main-input-text {
+  border-bottom-color: #192a56;
+  border-bottom-width: 1px;
+  border-left: 0;
+  border-radius: 5px;
+  border-right: 0;
+  border-top: 0;
+  color: #4d5156;
+  font-size: 12px;
+  height: 8px;
+  margin-left: 5px;
+  padding: 10px;
+  width: 200px;
+}
+
+.main-buttonAdd:disabled {
+  cursor: cell;
+}
+
+.main-buttonAdd:disabled .icon-button {
+  color: rgba(68, 189, 50, 0.5);
+  height: 30px;
+  width: 30px;
+}
+
+.main-buttonAdd {
+  display: flex;
+  justify-content: center;
+  border: none;
+  height: 28px;
+  margin-left: 10px;
+  text-align: center;
+  cursor: pointer;
+  background-color: transparent;
+  margin-bottom: 7px;
+}
+
+.icon-button {
+  color: rgba(68, 189, 50, 1);
+  height: 30px;
+  width: 30px;
+}
+
+.main-button-print {
+  display: flex;
+  justify-content: center;
+  border: none;
+  height: 28px;
+  margin-left: 2px;
+  text-align: center;
+  cursor: pointer;
+  background-color: transparent;
+  margin-top: 3px;
+  margin-bottom: 7px;
+}
+
+.icon-button-print {
+  color: rgba(0, 0, 0, 0.5);
+  height: 25px;
+  width: 25px;
+}
+  
+body {
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+}
+  
+/* =====------------BLOCK VALUES------------===== */
+/* ---------------------------------------------- */
+.block-values {
+  border-bottom: solid 1.5px rgba(0, 0, 0, 0.1);
+  opacity: 0.8;
+  color: #192a56;
+  margin-top: 1px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 15px
+}
+
+.title-values {
+  padding: 15px;
+  color: #e17055;
+  font-size: 20px;
+}
+
+/* =====-----------CONTAINER TABLE----------===== */
+/* ---------------------------------------------- */
+.container-table-products {
+  display: flex;
+  height: auto;
+  justify-content: center;
+  margin-top: 3px;
+  text-align: center;
+  width: 100%;
+}
+
+.main-table {
+  width: 99.5%;
+}
+
+body .main-table {
+  color: #38ada9;
+  justify-content: center;
+}
+
+
+/* =====------------BLOCK COLUMNS-----------===== */
+/* ---------------------------------------------- */
+
+.main-tr {
+  background-color: #ffeaa7;
+  text-align: center;
+}
+
+.celulasColumnsValues {
+  border: 0.5px solid #38ada9;
+}
+
+.celulasColumnsText {
+  border: 0.5px solid #38ada9;
+  width: 30%;
+}
+
+/* =====--------------BLOCK ROWS------------===== */
+/* ---------------------------------------------- */
+.main-td {
+  background-color: #dfe6e9;
+  color: #e17055;
+  font-size: 13px;
+  height: 20px;
+}
+
+.celulasRow {
+  border: 0.5px solid #38ada9;
+  background-color: #dfe6e9;
+}
+
+.celulasRowDelEdit {
+  border: 0;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: auto;
+}
+
+.main-buttonDelete {
+  display: flex;
+  justify-content: center;
+  border: none;
+  height: 15px;
+  text-align: center;
+  cursor: pointer;
+  background-color: transparent;
+  margin-bottom: 7px;
+}
+
+.icon-button-delete {
+  margin-left: 2.5px;
+  color: #e84118;
+  height: 20px;
+  width: 20px;
+}
+
+.icon-button-edit {
+  margin-left: 2.5px;
+  color: rgba(68, 189, 50, 1);
+  height: 20px;
+  width: 20px;
+}

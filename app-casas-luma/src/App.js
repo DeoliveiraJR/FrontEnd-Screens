@@ -5,6 +5,8 @@ import { Switch, BrowserRouter, Route } from 'react-router-dom';
 import Login from './Pages/Login';
 import Home from './Pages/Home';
 import CadastroFunc from './Pages/CadastroFunc'
+import ScreenProduct from './Pages/ScreenProduct';
+import ScreenSales from './Pages/ScreenSales';
 
 class App extends React.Component {
   render() {
@@ -14,6 +16,8 @@ class App extends React.Component {
           <Route exact path="/" component={ Login } />
           <Route path="/home" component={ Home } />
           <Route path="/cadastroFunc" component={ CadastroFunc } />
+          <Route path="/screenProduct" component={ ScreenProduct } />
+          <Route path="/screenSales" component={ ScreenSales } />
         </Switch>
       </BrowserRouter>
     );
@@ -22,7 +26,6 @@ class App extends React.Component {
 
 export default App;
 
-/* 
 // -------------------------------------------------------------------------------------------------------------------------------
 // =================================================---------CHECKLIST----------==================================================
 // -------------------------------------------------------------------------------------------------------------------------------
@@ -30,59 +33,38 @@ export default App;
 // =================================================----------SCREENS-----------==================================================
 // -------------------------------------------------------------------------------------------------------------------------------
 
-  [ ] tela de login:
-    - Código de usuário
-    - Senha.
+/* 
+  [ X ] tela de login:
+    X Código de usuário
+    X Senha.
 
-  [ ] tela Home:
-    - Links das telas
+  [ X ] tela Home:
+    X Cards das telas
 
-  [ ] Tela de cadastro de produto:
-    - Código de produto
-    - Nome do produto
-    - Quantidade
-    - Valor de Compra
-    - Valor de Venda.
+  [ X ] Tela de cadastro de produto:
+    X Código de produto
+    X Nome do produto
+    X Quantidade
+    X Valor de Compra
+    X Valor de Venda.
 
-  [ ] Tela de cadastro de funcionários:
-    - Código do funcionário
-    - Nome
-    - Cargo
-    - Email
-    - Senha
-    - Salário.
+  [ X ] Tela de cadastro de funcionários:
+    X Código do funcionário
+    X Nome
+    X Cargo
+    X Email
+    X Senha
 
-  [ ] Tela de cadastro de vendas:
-    - Código de venda
-    - Código do produto
-    - Data da venda
-    - Tipo de Pagamento.
-
-  [ ] Tela de gerar relatório de itens em falta:
-    - Código do relatório de produto em falta
-    - Código do produto
-    - Quantidade vendida do produto
-    - Quantidade em estoque do produto.
-
-  [ ] Tela de relatórios de vendas diarias:
-    - Código de relatório de vendas diárias
-    - Código de lucro diário.
-
-  [ ] Tela de relatório de vendas mensais:
-    - Código de relatório de vendas mensais
-    - Código de lucro mensal.
-
-  [ ] Tela funcionalidade associar venda a usuário:
-    - Código de usuário
-    - data da venda
-    - valor da venda
-    - produtos vendidos. 
-
-// =================================================----------FIELDS-----------==================================================
-// -------------------------------------------------------------------------------------------------------------------------------
-
-  [ ] Campo Gerar relação dos preços dos produtos: Nome do produto, Código do produto, Preço.
-  [ ] Campo Gerar relatório dos gastos 
-  [ ] Campo Gerar relatório dos lucros
-
-*/
+  [ X ] Tela de cadastro de vendas:
+    X Código de venda
+    X Código do produto
+    X Data da venda
+    X  Quantidade
+    X Valor Venda
+    X Tipo de Pagamento.
+    X Código de relatório de vendas diárias
+    X Código de lucro diário.
+    X Código de relatório de vendas diárias
+    X Código de lucro diário.
+  */
+ 
