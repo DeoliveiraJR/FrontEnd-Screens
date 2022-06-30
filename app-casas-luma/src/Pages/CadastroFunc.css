@@ -61,7 +61,7 @@
 .main-buttonLogin-header:disabled {
   background-color: rgba(25, 42, 86, 0.3);
   border-radius: 5px;
-  color: white;
+  color: #192a56;
   width: 100px;
   height: 32px;
   margin-left: 2px;
@@ -211,6 +211,7 @@
   color: white;
   cursor: pointer;
   font-size: 18 px;
+  font-weight: 700;
   height: 50px;
   justify-content: center;
   margin-bottom: 12px;

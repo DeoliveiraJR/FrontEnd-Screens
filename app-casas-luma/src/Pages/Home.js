@@ -5,8 +5,8 @@ import './Home.css';
 import { Player } from '@lottiefiles/react-lottie-player';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSquarePlus } from '@fortawesome/free-solid-svg-icons'
+import propTypes from 'prop-types';
 // import CardList from '../Componentes/CardList'
-// import propTypes from 'prop-types';
 // import dataCategories from '../Helpers/dataCategories'
 
 class Home extends React.Component {
@@ -59,6 +59,7 @@ class Home extends React.Component {
     console.log('---------------');
 
     // ====Desctructing Objects=====
+    const { history } = this.props;
     // const { categories } = this.state;
     // console.log(categories)
     
@@ -83,7 +84,7 @@ class Home extends React.Component {
           {/* CONTAINER RIGTH -CARDS */}
           <div className="container-right">
             
-            {/* FIGURE -CARD 1 */}
+            {/* FIGURE -CARD 1 - PRODUCTS*/}
             <figure className="main-figure">
               <div className="container-animation-home">
                 <Player
@@ -94,16 +95,23 @@ class Home extends React.Component {
                 />
               </div>
               <div className="container-caption">
-                <FontAwesomeIcon
-                  icon={faSquarePlus}
-                  className="icon-card"  
-                />  
-                <figcaption className="main-caption">PRODUTOS</figcaption>
+                <button
+                  disabled={false}
+                  type='button'
+                  className="btn-nav"
+                  onClick={() => history.push('/screenProduct')}
+                >
+                  <FontAwesomeIcon
+                    icon={faSquarePlus}
+                    className="icon-card"  
+                  />
+                  <figcaption className="main-caption">PRODUTOS</figcaption>
+                </button>
               </div>
               <span className="main-descript">Tela de cadastro de produtos</span>
             </figure>
             
-            {/* FIGURE -CARD 2 */}
+            {/* FIGURE -CARD 2 - SALES */}
             <figure className="main-figure">
               <div className="container-animation-home">
                 <Player
@@ -114,16 +122,23 @@ class Home extends React.Component {
                 />
               </div>
               <div className="container-caption">
-                <FontAwesomeIcon
-                  icon={faSquarePlus}
-                  className="icon-card"  
-                />  
-                <figcaption className="main-caption">VENDAS</figcaption>
+                <button
+                    disabled={false}
+                    type='button'
+                    className="btn-nav"
+                    onClick={() => history.push('/screenSales')}
+                >
+                  <FontAwesomeIcon
+                    icon={faSquarePlus}
+                    className="icon-card"  
+                  />  
+                  <figcaption className="main-caption">VENDAS</figcaption>
+                </button>
               </div>
               <span className="main-descript">Tela de cadastro de Vendas</span>
             </figure>
 
-            {/* FIGURE -CARD 3 */}
+            {/* FIGURE -CARD 3 - CLIENTES */}
             <figure className="main-figure">
               <div className="container-animation-home">
                 <Player
@@ -134,13 +149,20 @@ class Home extends React.Component {
                 />
               </div>
               <div className="container-caption">
-                <FontAwesomeIcon
-                  icon={faSquarePlus}
-                  className="icon-card"  
-                />
-                <figcaption className="main-caption">CLIENTES</figcaption>
+                <button
+                  disabled={false}
+                  type='button'
+                  className="btn-nav"
+                  onClick={() => history.push('/')}
+                >
+                  <FontAwesomeIcon
+                    icon={faSquarePlus}
+                    className="icon-card"  
+                  />
+                  <figcaption className="main-caption">FORNECEDORES</figcaption>
+                </button>
               </div>
-              <span className="main-descript">Tela de cadastro de Clientes</span>
+              <span className="main-descript">Tela de cadastro de Fornecedor</span>
             </figure>
           
           </div>
@@ -150,13 +172,11 @@ class Home extends React.Component {
   }
 }
 
-/*
-TemplateComponent.propTypes = {
-  props1: propTypes.string.isRequired,
-  props1: propTypes.bool.isRequired,
-  props1: propTypes.func.isRequired,
-  props1: propTypes.func.isRequired,
+
+Home.propTypes = {
+  history: propTypes.oneOfType([
+    propTypes.object,
+  ]).isRequired,
 };
- */
 
 export default Home;

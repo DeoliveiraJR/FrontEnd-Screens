@@ -115,7 +115,7 @@ class Login extends React.Component {
               {/* componente 1 - input username */}
               <label htmlFor="email" className="main-label">
                 <input
-                  className="main-input"
+                  className="main-input-login"
                   type="text"
                   name="email"
                   placeholder="digite o seu usuario"
@@ -126,7 +126,7 @@ class Login extends React.Component {
               {/* componente 2 - input password */}
               <label htmlFor="password" className="main-label">
                 <input
-                  className="main-input"
+                  className="main-input-login"
                   type="password"
                   name="password"
                   placeholder="digite sua senha"

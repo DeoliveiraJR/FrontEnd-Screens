@@ -1,5 +1,4 @@
 .main-div {
-    background-color: #d63031;
     height: 750px;
   }
   
@@ -43,7 +42,7 @@
     font-weight: 700;
   }
 
-  .main-input {
+  .main-input-login {
     background-color: white;
     border-bottom-color: #192a56;
     border-bottom-width: 1px;
