@@ -1,8 +1,8 @@
-// =======================================-------PAGE-[SCREEN PRODUCTS]------=============================================
+// =======================================-------PAGE-[SCREEN Providers]------=============================================
 // -----------------------------------------------------------------------------------------------------------------------
 import React from "react";
 import Header from "../Componentes/Header";
-import "./ScreenProduct.css";
+import "./ScreenProviders.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSquarePlus,
@@ -13,14 +13,14 @@ import {
 // import PropTypes from 'prop-types';
 // import FormExpenses from '../Components/FormExpenses';
 
-class ScreenProduct extends React.Component {
+class ScreenProviders extends React.Component {
   // =============================================================
   // ==========----------CONSTRUCTOR SCOPE-------------==========
   // =============================================================
 
   // 1- Constructor and Super;
   constructor() {
-    console.log("[SCREEN-PRODUCT] - 1.Constructor");
+    console.log("[SCREEN-PROVIDERS] - 1.Constructor");
     console.log("-----------");
     super();
     // 2- 'binding' functions:
@@ -29,12 +29,12 @@ class ScreenProduct extends React.Component {
 
     // 3- create initial-state-component {Object} :
     this.state = {
-      products: [],
-      codigo: "",
+      providers: [],
+      date: "",
+      nomeFornecedor: "",
       nomeProduto: "",
-      quantidade: "",
+      CNPJ: "",
       valorCompra: "",
-      valorVenda: "",
       statusBtn: true,
     };
   }
@@ -43,7 +43,7 @@ class ScreenProduct extends React.Component {
   // ==========--------componentDidMount SCOPE----------==========
   // =============================================================
   componentDidMount() {
-    console.log("[SCREEN-PRODUCT] - 3.ComponentDidMount");
+    console.log("[SCREEN-PROVIDERS] - 3.ComponentDidMount");
     console.log("------------");
   }
 
@@ -74,28 +74,27 @@ class ScreenProduct extends React.Component {
   handleClick() {
     console.log("handleClick");
     console.log("----------------");
-    const { codigo, nomeProduto, quantidade, valorCompra, valorVenda } =
-      this.state;
+    const { date, nomeFornecedor, nomeProduto, CNPJ, valorCompra } = this.state;
 
-    const products = {
-      codigo,
+    const providers = {
+      date,
+      nomeFornecedor,
       nomeProduto,
-      quantidade,
+      CNPJ,
       valorCompra,
-      valorVenda,
     };
 
     this.setState(
       (prevState) => ({
-        products: [...prevState.products, products],
+        providers: [...prevState.providers, providers],
       }),
       () => {
         this.setState({
-          codigo: "",
+          date: "",
+          nomeFornecedor: "",
           nomeProduto: "",
-          quantidade: "",
+          CNPJ: "",
           valorCompra: "",
-          valorVenda: "",
           statusBtn: true,
         });
       }
@@ -107,17 +106,16 @@ class ScreenProduct extends React.Component {
   handleValidateBtnDisable() {
     console.log("handleBtnDisable");
     console.log("------------");
-    const { codigo, nomeProduto, quantidade, valorCompra, valorVenda } =
-      this.state;
+    const { date, nomeFornecedor, nomeProduto, CNPJ, valorCompra } = this.state;
 
     const MIN_LENGHT = 1;
 
     if (
-      codigo.length >= MIN_LENGHT &&
+      date.length >= MIN_LENGHT &&
+      nomeFornecedor.length >= MIN_LENGHT &&
       nomeProduto.length >= MIN_LENGHT &&
-      quantidade.length >= MIN_LENGHT &&
-      valorCompra.length >= MIN_LENGHT &&
-      valorVenda.length >= MIN_LENGHT
+      CNPJ.length >= MIN_LENGHT &&
+      valorCompra.length >= MIN_LENGHT
     ) {
       this.setState({ statusBtn: false });
     } else {
@@ -129,46 +127,61 @@ class ScreenProduct extends React.Component {
   // ==========-------------RENDER SCOPE ()------------===========
   // =============================================================
   render() {
-    console.log("[SCREEN-PRODUCT] - 2. Render");
+    console.log("[SCREEN-PROVIDERS] - 2. Render");
     console.log("-------------");
 
     // ====Desctructing Objects=====
     const {
-      products,
-      codigo,
+      providers,
+      date,
+      nomeFornecedor,
       nomeProduto,
-      quantidade,
+      CNPJ,
       valorCompra,
-      valorVenda,
       statusBtn,
     } = this.state;
-    console.log(products);
+    console.log(providers);
 
     return (
       <div className="container-screen-products">
         <div className="container-header-home">
           <Header />
         </div>
-        <h1 className="main-title-products">Tela de Cadastro de Produtos</h1>
+        <h1 className="main-title-products">
+          Tela de Cadastro de Fornecedores
+        </h1>
         <div className="container-form">
           <div className="block-form">
             <form className="main-form">
-              <label htmlFor="value" className="main-label">
-                Código do produto:
-                {/* >>>>> component: INPUT-CODIGO <<<<< */}
+              {/* >>>>> component: DATA <<<<< */}
+              <label htmlFor="date" className="main-label">
+                data:
                 <input
                   className="main-input"
-                  name="codigo"
-                  type="number"
-                  placeholder="codigo produto"
-                  value={codigo}
+                  name="date"
+                  type="date"
+                  placeholder="data"
+                  value={date}
+                  onChange={this.handleOnChange}
+                />
+              </label>
+
+              {/* >>>>> component: INPUT-nomeFornecedor <<<<< */}
+              <label htmlFor="nomeFornecedor" className="main-label">
+                Fornecedor:
+                <input
+                  className="main-input-text"
+                  name="nomeFornecedor"
+                  type="text"
+                  placeholder="fornecedor"
+                  value={nomeFornecedor}
                   onChange={this.handleOnChange}
                 />
               </label>
 
               {/* >>>>> component: INPUT-NOME-PRODUTO <<<<< */}
               <label htmlFor="nomeProduto" className="main-label">
-                Nome:
+                Produto:
                 <input
                   className="main-input-text"
                   name="nomeProduto"
@@ -179,41 +192,32 @@ class ScreenProduct extends React.Component {
                 />
               </label>
 
-              {/* >>>>> component: INPUT QUANTIDADE <<<<< */}
-              <label htmlFor="quantidade" className="main-label">
-                QTDE:
+              {/* >>>>> component: INPUT-CNPJ <<<<< */}
+              <label htmlFor="CNPJ" className="main-label">
+                CNPJ:
                 <input
                   className="main-input"
-                  name="quantidade"
+                  name="CNPJ"
                   type="number"
-                  placeholder="quantidade"
-                  value={quantidade}
+                  min="0"
+                  oninput="this.value = Math.abs(this.value)"
+                  placeholder="CNPJ"
+                  value={CNPJ}
                   onChange={this.handleOnChange}
                 />
               </label>
 
-              {/* >>>>> component: INPUT VALOR COMPRA <<<<< */}
+              {/* >>>>> component: INPUT VALOR VENDA <<<<< */}
               <label htmlFor="valorCompra" className="main-label">
                 Valor de Compra:
                 <input
                   className="main-input"
                   name="valorCompra"
                   type="number"
-                  placeholder="R$ Compra"
+                  min="0"
+                  oninput="this.value = Math.abs(this.value)"
+                  placeholder="R$ compra"
                   value={valorCompra}
-                  onChange={this.handleOnChange}
-                />
-              </label>
-
-              {/* >>>>> component: INPUT VALOR VENDA <<<<< */}
-              <label htmlFor="valorVenda" className="main-label">
-                Valor de Venda:
-                <input
-                  className="main-input"
-                  name="valorVenda"
-                  type="number"
-                  placeholder="R$ Venda"
-                  value={valorVenda}
                   onChange={this.handleOnChange}
                 />
               </label>
@@ -240,66 +244,66 @@ class ScreenProduct extends React.Component {
             </form>
           </div>
           <div className="block-values">
-            Total Compra | <span className="title-values">R$ : X.XX</span> |
-            Total Venda | <span className="title-values">R$ : X.XX</span>
+            Total Compra | <span className="title-values">R$ : X.XX</span>
           </div>
-        </div>
-        <div className="container-table-products">
-          <table className="main-table">
-            <tr className="main-tr">
-              <th className="celulasColumnsValues">CODIGO PRODUTO</th>
-              <th className="celulasColumnsText">NOME PRODUTO</th>
-              <th className="celulasColumnsValues">QTDE</th>
-              <th className="celulasColumnsValues">Valor Compra R$</th>
-              <th className="celulasColumnsValues">Valor Venda R$</th>
-            </tr>
-            {!products ? (
-              <></>
-            ) : (
-              products.map((product, index) => (
-                <tr key={index} className="main-td">
-                  <td className="celulasRow">{product.codigo}</td>
-                  <td className="celulasRow">{product.nomeProduto}</td>
-                  <td className="celulasRow">{product.quantidade}</td>
-                  <td className="celulasRow">{product.valorCompra}</td>
-                  <td className="celulasRow">{product.valorVenda}</td>
-                  <td className="celulasRowDelEdit">
-                    <button
-                      type="button"
-                      className="main-buttonDelete"
-                      data-testid="delete-btn"
-                      disabled={false}
-                      // onClick={ () => testingDelete(expense.id) }
-                    >
-                      <FontAwesomeIcon
-                        icon={faTrashCan}
-                        className="icon-button-delete"
-                      />
-                    </button>
-                    <button
-                      type="button"
-                      className="main-buttonDelete"
-                      data-testid="delete-btn"
-                      disabled={false}
-                      // onClick={ () => testingDelete(expense.id) }
-                    >
-                      <FontAwesomeIcon
-                        icon={faPen}
-                        className="icon-button-edit"
-                      />
-                    </button>
-                  </td>
-                </tr>
-              ))
-            )}
-          </table>
+
+          <div className="container-table-products">
+            <table className="main-table">
+              <tr className="main-tr">
+                <th className="celulasColumnsValues">DATA</th>
+                <th className="celulasColumnsText">FORNECEDOR</th>
+                <th className="celulasColumnsText">PRODUTO</th>
+                <th className="celulasColumnsValues">CNPJ</th>
+                <th className="celulasColumnsValues">VALOR COMPRA R$</th>
+              </tr>
+              {!providers ? (
+                <></>
+              ) : (
+                providers.map((provider, index) => (
+                  <tr key={index} className="main-td">
+                    <td className="celulasRow">{provider.date}</td>
+                    <td className="celulasRow">{provider.nomeFornecedor}</td>
+                    <td className="celulasRow">{provider.nomeProduto}</td>
+                    <td className="celulasRow">{provider.CNPJ}</td>
+                    <td className="celulasRow">{provider.valorCompra}</td>
+                    <td className="celulasRowDelEditsale">
+                      <button
+                        type="button"
+                        className="main-buttonDelete"
+                        data-testid="delete-btn"
+                        disabled={false}
+                        // onClick={ () => testingDelete(expense.id) }
+                      >
+                        <FontAwesomeIcon
+                          icon={faTrashCan}
+                          className="icon-button-delete"
+                        />
+                      </button>
+                      <button
+                        type="button"
+                        className="main-buttonDelete"
+                        data-testid="delete-btn"
+                        disabled={false}
+                        // onClick={ () => testingDelete(expense.id) }
+                      >
+                        <FontAwesomeIcon
+                          icon={faPen}
+                          className="icon-button-edit"
+                        />
+                      </button>
+                    </td>
+                  </tr>
+                ))
+              )}
+            </table>
+          </div>
         </div>
       </div>
     );
   }
 }
 
-ScreenProduct.propTypes = {
+ScreenProviders.propTypes = {
   /* codigo: PropTypes.string.isRequired,
   nomeProduto: PropTypes.func.isRequired,
   quantidade: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
@@ -307,4 +311,4 @@ ScreenProduct.propTypes = {
   valorVenda: PropTypes.func.isRequired, */
 };
 
-export default ScreenProduct;
+export default ScreenProviders;

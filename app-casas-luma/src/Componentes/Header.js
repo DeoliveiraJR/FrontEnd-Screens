@@ -1,11 +1,10 @@
 // ==================================----------COMPONENT [Header]-----------==============================================
 // -----------------------------------------------------------------------------------------------------------------------
-import React from 'react';
-import Logo from '../Imagens/Logo-Header.svg';
-import './Header.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faNavicon } from '@fortawesome/free-solid-svg-icons'
-import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
+import React from "react";
+import Logo from "../Imagens/Logo-Header.svg";
+import "./Header.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 // import { Link } from 'react-router-dom';
 
 class Header extends React.Component {
@@ -15,8 +14,8 @@ class Header extends React.Component {
 
   // 1- Constructor e Super;
   constructor() {
-    console.log('[HEADER] - 1.Constructor');
-    console.log('-----------');
+    console.log("[HEADER] - 1.Constructor");
+    console.log("-----------");
     super();
     // 2- 'binding' nas funções:
     // this.handleFetchGetUser = this.handleFetchGetUser.bind(this);
@@ -31,9 +30,8 @@ class Header extends React.Component {
   // ==========--------componentDidMount SCOPE----------==========
   // =============================================================
   componentDidMount() {
-    console.log('[HEADER] - 3.ComponentDidMount');
-    console.log('------------');
-    
+    console.log("[HEADER] - 3.ComponentDidMount");
+    console.log("------------");
   }
 
   // =============================================================
@@ -41,46 +39,39 @@ class Header extends React.Component {
   // =============================================================
   // ====----FUNCTION ----====
   // describe function:
-  
+
   // =============================================================
   // ==========-------------RENDER SCOPE ()------------===========
   // =============================================================
   render() {
-    console.log('[HEADER] - 2.Render');
-    console.log('------------');
+    console.log("[HEADER] - 2.Render");
+    console.log("------------");
 
     // ====Desctructing Objects=====
-    // const { loading } = this.state;
+
+    // const { categories } = this.state;
+
+    // console.log(categories)
 
     return (
       <header className="main-header-home">
-        
         {/* CONTAINER LOGO */}
         <div className="container-logo-header-home">
-          <FontAwesomeIcon
-            icon={faNavicon}
-            className="icon-header"  
-          />  
+          <img src={Logo} alt="logo icon" className="main-logo" />
         </div>
 
         {/* CONTAINER TITLE */}
         <div className="container-title-header-home">
-          <img
-            src={ Logo }
-            alt="logo icon"
-            className="main-logo"
-          />
-          <h1 className="main-title-header-home">SISTEMA DE CONTROLE DE ESTOQUE</h1>
+          <h1 className="main-title-header-home">
+            SISTEMA DE CONTROLE DE ESTOQUE
+          </h1>
         </div>
 
         {/* CONTAINER LOGOUT/NAV */}
         <div className="container-nav-header-home">
-          <FontAwesomeIcon
-            icon={faSignOutAlt}
-            className="icon-header"  
-          /> 
-        </div>        
-    </header>
+          <FontAwesomeIcon icon={faSignOutAlt} className="icon-header" />
+        </div>
+      </header>
     );
   }
 }

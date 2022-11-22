@@ -1,23 +1,25 @@
 // =====================================--------PROJETO APP ESTOQUE------=================================================
 // -----------------------------------------------------------------------------------------------------------------------
-import React from 'react';
-import { Switch, BrowserRouter, Route } from 'react-router-dom';
-import Login from './Pages/Login';
-import Home from './Pages/Home';
-import CadastroFunc from './Pages/CadastroFunc'
-import ScreenProduct from './Pages/ScreenProduct';
-import ScreenSales from './Pages/ScreenSales';
+import React from "react";
+import { Switch, BrowserRouter, Route } from "react-router-dom";
+import Login from "./Pages/Login";
+import Home from "./Pages/Home";
+import CadastroFunc from "./Pages/CadastroFunc";
+import ScreenProduct from "./Pages/ScreenProduct";
+import ScreenSales from "./Pages/ScreenSales";
+import ScreenProviders from "./Pages/ScreenProviders";
 
 class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={ Login } />
-          <Route path="/home" component={ Home } />
-          <Route path="/cadastroFunc" component={ CadastroFunc } />
-          <Route path="/screenProduct" component={ ScreenProduct } />
-          <Route path="/screenSales" component={ ScreenSales } />
+          <Route exact path="/" component={Login} />
+          <Route path="/home" component={Home} />
+          <Route path="/cadastroFunc" component={CadastroFunc} />
+          <Route path="/screenProduct" component={ScreenProduct} />
+          <Route path="/screenSales" component={ScreenSales} />
+          <Route path="/screenProviders" component={ScreenProviders} />
         </Switch>
       </BrowserRouter>
     );
@@ -67,4 +69,3 @@ export default App;
     X Código de relatório de vendas diárias
     X Código de lucro diário.
   */
- 

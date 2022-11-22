@@ -20,9 +20,6 @@
 
 /* =====----------DIV/CONTAINER LOGO--------===== */
 /* ---------------------------------------------- */
-.container-logo-header-home {
-  
-}
 
 /* =====---------DIV/CONTAINER TITLE--------===== */
 /* ---------------------------------------------- */
@@ -46,6 +43,6 @@
 
 /* =====---------CONTAINER LOGOUT/NAV-------===== */
 /* ---------------------------------------------- */
-.container-nav-header-home .icon-header{
+.container-nav-header-home .icon-header {
   margin-right: 1rem;
 }
